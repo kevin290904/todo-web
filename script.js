@@ -479,3 +479,6 @@ navigator.serviceWorker.ready.then(registration => {
   });
 }).catch(err => console.error('Gagal subscribe push', err));
 
+document.getElementById("menu-toggle").addEventListener("click", () => {
+  document.querySelector(".sidebar").classList.toggle("active");
+});

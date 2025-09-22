@@ -514,3 +514,47 @@ h1, h2 {
   margin-bottom: 20px;
   font-weight: 600;
 }
+
+/* Tombol toggle */
+.menu-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #333;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 2000;
+  cursor: pointer;
+}
+
+/* Sidebar awalnya tersembunyi di HP */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #2d3748;
+  padding-top: 60px;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%); /* sembunyi */
+  z-index: 1500;
+}
+
+/* Kalau aktif → tampil */
+.sidebar.active {
+  transform: translateX(0);
+}
+
+/* Supaya di layar besar sidebar tetap selalu kelihatan */
+@media (min-width: 768px) {
+  .sidebar {
+    transform: translateX(0);
+    position: static;
+    height: auto;
+  }
+  .menu-btn {
+    display: none; /* tombol disembunyiin di desktop */
+  }
+}
