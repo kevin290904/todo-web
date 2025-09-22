@@ -1,0 +1,516 @@
+/* Reset dan Font */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.dark {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 230px;
+  background-color: #2d3748;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar .logo {
+  font-size: 1.4em;
+  margin-bottom: 40px;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 20px; /* Jarak antar item */
+}
+
+.sidebar nav ul li a {
+  color: #cbd5e0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.05rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: #4a5568;
+  color: #fff;
+}
+
+
+/* Content Area */
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+/* Header Bar */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Profil Header Box */
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-top: 10px;
+}
+
+/* Avatar */
+.profile-box img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+}
+
+/* Nama user */
+.profile-box span {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #2d3748;
+  margin-right: auto;
+}
+
+/* Tombol logout */
+#logout-btn {
+  background: #e53e3e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#logout-btn:hover {
+  background: #c53030;
+}
+
+
+#toggle-theme {
+  background: transparent;
+  font-size: 1.2em;
+  cursor: pointer;
+  border: none;
+}
+
+/* Form Card */
+.form-card {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.form-card input,
+.form-card select {
+  padding: 8px;
+  font-size: 1em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex: 1 1 auto;
+  min-width: 120px;
+}
+
+.form-card button {
+  background: #3182ce;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.form-card button:hover {
+  background: #2b6cb0;
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-list li {
+  background: #ffffff;
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.task-list.completed li {
+  background-color: #e6fffa;
+  color: #4a5568;
+}
+
+.task-list .delete-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.high { border-left: 4px solid #e53e3e; }
+.medium { border-left: 4px solid #ed8936; }
+.low { border-left: 4px solid #48bb78; }
+
+.task-timer {
+  font-size: 0.85em;
+  color: #718096;
+  margin-top: 6px;
+  display: block;
+}
+
+/* Chart & Sections */
+.chart-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 30px auto;
+}
+
+h1, h2 {
+  margin-top: 30px;
+}
+
+#calendar {
+  margin-top: 20px;
+}
+
+/* Focus mode, badges, recommendation */
+.focus-task ul {
+  margin: 10px 0;
+  padding: 0;
+  list-style: square inside;
+}
+
+.badge {
+  display: inline-block;
+  background: gold;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 20px;
+  margin: 5px 5px 0 0;
+}
+
+.mood-entry {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.mood-entry select, .mood-entry button {
+  padding: 8px;
+  font-size: 1em;
+}
+
+/* Alarm Section */
+.alarm-control {
+  margin-top: 20px;
+}
+
+.alarm-control button {
+  padding: 10px 20px;
+  background: #f56565;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.alarm-control button:hover {
+  background: #c53030;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 240px;
+    background-color: #2d3748;
+    color: #fff;
+    padding: 30px 20px;
+    height: 100vh;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar nav ul li {
+    margin-bottom: 20px; /* Tambah spasi antar menu */
+  }
+  
+  .sidebar nav ul li a {
+    color: #cbd5e0;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.2s ease;
+  }
+  
+  .sidebar nav ul li a:hover {
+    color: #fff;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* Header Rapi */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Profil Box */
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f3f4f6;
+  padding: 8px 12px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.profile-box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #cbd5e0;
+}
+
+.profile-box span {
+  font-weight: 600;
+  font-size: 1em;
+  color: #2d3748;
+}
+
+/* Tombol logout */
+#logout-btn {
+  background: #e53e3e;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background 0.2s ease;
+}
+
+#logout-btn:hover {
+  background: #c53030;
+}
+
+/* Upgrade Header & Section Layout */
+.header-upgrade {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin: 0;
+}
+
+/* Header Flex Bagian Kiri & Kanan */
+.header-left {
+  flex: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Card Section Global */
+.card-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Heading Section */
+.card-section h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #2d3748;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-upgrade {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Focus Task Modern Style */
+.focus-task {
+  margin-top: 20px;
+}
+
+.focus-task .focus-card {
+  background: #edf2f7;
+  border-left: 6px solid #3182ce;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 12px;
+  color: #2d3748;
+  transition: background 0.3s ease;
+}
+
+.focus-task .focus-card:hover {
+  background: #e2e8f0;
+}
+
+/* Completed Task Card Style */
+.completed-card {
+  background-color: #f0fff4;
+  color: #2f855a;
+  border-left: 6px solid #38a169;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease;
+}
+
+.completed-card:hover {
+  transform: scale(1.02);
+}
+
+.sidebar nav ul li {
+  margin-bottom: 16px;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #cbd5e0;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: #4a5568;
+  color: #fff;
+}
+
+.sidebar nav ul li a i {
+  min-width: 20px;
+  text-align: center;
+}
+
+.sidebar nav ul li a span {
+  flex: 1;
+}
+
+.sidebar-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a0aec0;
+  margin-bottom: 20px;
+  font-weight: 600;
+}

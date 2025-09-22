@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List Aurette</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#3182ce">
+
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2 class="logo">📋 TaskMaster</h2>
+      <div class="sidebar-label">Dashboard</div>
+      <nav>
+        <ul>
+          <li><a href="#task-section"><i class="fas fa-tasks"></i><span>Tugas</span></a></li>
+          <li><a href="#calendar"><i class="fas fa-calendar-alt"></i><span>Kalender</span></a></li>
+          <li><a href="#productivityChart"><i class="fas fa-chart-pie"></i><span>Statistik</span></a></li>
+          <li><a href="#badges"><i class="fas fa-award"></i><span>Badge</span></a></li>
+          <li><a href="#recommendation"><i class="fas fa-robot"></i><span>Rekomendasi</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+    
+
+    <!-- Konten Utama -->
+    <main class="content">
+      <!-- Header -->
+      <header class="header-upgrade">
+        <div class="header-left">
+          <h1 class="page-title">📋 To do-List </h1>
+        </div>
+        <div class="header-right">
+          <div class="profile-box">
+            <img src="https://ui-avatars.com/api/?name=User" alt="Profil" id="profile-pic" />
+            <span id="profile-username">Username</span>
+            <button id="logout-btn">Logout</button>
+          </div>
+          <button id="toggle-theme" title="Toggle Theme">🌙</button>
+        </div>
+      </header>
+
+      <!-- Tambah Tugas -->
+      <section id="task-section" class="card-section">
+        <h2>📝 Tambah Tugas</h2>
+        <form id="todo-form" class="form-card">
+          <input type="text" id="task" placeholder="Tulis tugas..." required />
+          <select id="priority">
+            <option value="tinggi">Tinggi</option>
+            <option value="sedang">Sedang</option>
+            <option value="rendah">Rendah</option>
+          </select>
+          <input type="datetime-local" id="deadline" />
+          <input type="file" id="task-file" />
+          <button type="submit"><i class="fas fa-plus"></i> Tambah</button>
+        </form>
+
+        <div id="filter" class="form-card">
+          <label for="filter-priority">Filter Prioritas:</label>
+          <select id="filter-priority">
+            <option value="semua">Semua</option>
+            <option value="tinggi">Tinggi</option>
+            <option value="sedang">Sedang</option>
+            <option value="rendah">Rendah</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- Fokus Tugas -->
+      <section class="card-section">
+        <h2>📌 Fokus Tugas</h2>
+        <div id="focus-mode" class="focus-task"></div>
+      </section>
+
+      <!-- Daftar & Riwayat Tugas -->
+      <section class="card-section">
+        <h2>📋 Daftar Tugas</h2>
+        <ul id="task-list" class="task-list"></ul>
+
+        <h3>✅ Riwayat Tugas Selesai</h3>
+        <ul id="completed-task-list" class="task-list completed"></ul>
+      </section>
+
+      <!-- Alarm -->
+      <section class="card-section alarm-control" id="alarm-control" style="display: none;">
+        <button onclick="stopAlarm()">🔇 Matikan Alarm</button>
+      </section>
+
+      <!-- Statistik -->
+      <section class="card-section">
+        <h2>📊 Statistik Produktivitas</h2>
+        <div class="chart-container">
+          <canvas id="productivityChart"></canvas>
+        </div>
+      </section>
+
+      <!-- Gamifikasi & Badge -->
+      <section class="card-section">
+        <h2>🏆 Gamifikasi & Badge</h2>
+        <div id="badges"></div>
+      </section>
+
+      <!-- Mood Tracker -->
+      <section class="card-section">
+        <h2>😊 Mood Tracker</h2>
+        <div class="mood-entry">
+          <select id="mood">
+            <option>😊 Happy</option>
+            <option>😐 Neutral</option>
+            <option>😟 Stress</option>
+          </select>
+          <button id="save-mood"><i class="fas fa-save"></i> Simpan Mood</button>
+        </div>
+      </section>
+
+      <!-- Rekomendasi Otomatis -->
+      <section class="card-section">
+        <h2>🤖 Rekomendasi Otomatis</h2>
+        <div id="recommendation"></div>
+      </section>
+
+      <!-- Kalender -->
+      <section class="card-section">
+        <h2>📅 Kalender Tugas</h2>
+        <div id="calendar"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('Service Worker terdaftar:', reg.scope))
+        .catch(err => console.error('SW gagal:', err));
+    }
+    </script>
+    
+</body>
+</html>
