@@ -528,7 +528,7 @@ h1, h2 {
   cursor: pointer;
 }
 
-/* Sidebar awalnya tersembunyi di HP */
+/* Default: sidebar hidden (untuk HP) */
 .sidebar {
   position: fixed;
   left: 0;
@@ -538,23 +538,53 @@ h1, h2 {
   background: #2d3748;
   padding-top: 60px;
   transition: transform 0.3s ease;
-  transform: translateX(-100%); /* sembunyi */
+  transform: translateX(-100%); /* sembunyi default */
   z-index: 1500;
 }
 
-/* Kalau aktif → tampil */
+/* Sidebar aktif (dibuka lewat tombol) */
 .sidebar.active {
   transform: translateX(0);
 }
 
-/* Supaya di layar besar sidebar tetap selalu kelihatan */
+/* Tombol menu */
+.menu-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #333;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 2000;
+  cursor: pointer;
+}
+
+/* Desktop view: sidebar selalu kelihatan */
 @media (min-width: 768px) {
   .sidebar {
-    transform: translateX(0);
     position: static;
+    transform: none; /* tampil normal */
     height: auto;
   }
+
   .menu-btn {
-    display: none; /* tombol disembunyiin di desktop */
+    display: none; /* tombol ☰ disembunyikan */
+  }
+
+  .dashboard {
+    display: flex;
+  }
+
+  .dashboard main {
+    flex: 1;
+    padding: 20px;
   }
 }
+
+@media (min-width: 768px) {
+  .content {
+    margin-left: 250px; /* kasih jarak sesuai lebar sidebar */
+  }
+}
+
